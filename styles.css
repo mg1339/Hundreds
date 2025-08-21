@@ -1,0 +1,698 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* App Container */
+.app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.app-header {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header-controls {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-icon:hover, .btn-icon:active {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Date Display */
+.date-display {
+    background-color: #fff;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+/* Tracking Interface */
+.tracking-interface {
+    padding: 1rem;
+}
+
+.exercise-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Exercise Cards */
+.exercise-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+}
+
+.exercise-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.exercise-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.exercise-progress {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.current-count {
+    color: #2196F3;
+    font-size: 1.3rem;
+}
+
+.target-count {
+    color: #666;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50, #2196F3);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+    width: 0%;
+}
+
+/* Exercise Controls */
+.exercise-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-counter {
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-counter:hover, .btn-counter:active {
+    background: #1976D2;
+    transform: scale(0.95);
+}
+
+.btn-minus {
+    background: #FF5722;
+}
+
+.btn-minus:hover, .btn-minus:active {
+    background: #E64A19;
+}
+
+.counter-input {
+    width: 80px;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #f9f9f9;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+.counter-input:focus {
+    outline: none;
+    border-color: #2196F3;
+    background: white;
+}
+
+.counter-input::-webkit-outer-spin-button,
+.counter-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Daily Summary */
+.daily-summary {
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.summary-label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.summary-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.completion-status {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+/* Calendar View */
+.calendar-view {
+    padding: 1rem;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0 0.5rem;
+}
+
+.calendar-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.btn-nav {
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-nav:hover, .btn-nav:active {
+    background: #1976D2;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.calendar-day {
+    background: white;
+    padding: 0.75rem 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.calendar-day:hover {
+    background: #f5f5f5;
+}
+
+.calendar-day.other-month {
+    color: #ccc;
+    background: #f9f9f9;
+}
+
+.calendar-day.today {
+    background: #2196F3;
+    color: white;
+}
+
+.calendar-day.complete {
+    background: #4CAF50;
+    color: white;
+}
+
+.calendar-day.partial {
+    background: #FF9800;
+    color: white;
+}
+
+.day-number {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.day-progress {
+    font-size: 0.7rem;
+    line-height: 1.1;
+    opacity: 0.9;
+}
+
+.btn-back {
+    width: 100%;
+    padding: 1rem;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-back:hover, .btn-back:active {
+    background: #1976D2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+}
+
+.btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-close:hover, .btn-close:active {
+    background: #f5f5f5;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.detail-grid {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #666;
+}
+
+.detail-value {
+    font-weight: 600;
+    color: #2196F3;
+}
+
+.modal-progress {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    color: white;
+    border-radius: 8px;
+}
+
+.modal-progress-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.modal-progress-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Settings Modal */
+.settings-section {
+    margin-bottom: 2rem;
+}
+
+.settings-section h4 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-setting {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn-setting:hover, .btn-setting:active {
+    background: #1976D2;
+}
+
+.btn-setting.btn-danger {
+    background: #F44336;
+}
+
+.btn-setting.btn-danger:hover, .btn-setting.btn-danger:active {
+    background: #D32F2F;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .app-container {
+        box-shadow: none;
+    }
+    
+    .exercise-controls {
+        gap: 0.75rem;
+    }
+    
+    .btn-counter {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+    }
+    
+    .counter-input {
+        width: 70px;
+        padding: 0.5rem;
+    }
+    
+    .calendar-day {
+        min-height: 50px;
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .day-progress {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .app-header {
+        padding: 0.75rem;
+    }
+    
+    .app-title {
+        font-size: 1.3rem;
+    }
+    
+    .exercise-card {
+        padding: 1rem;
+    }
+    
+    .exercise-controls {
+        gap: 0.5rem;
+    }
+    
+    .counter-input {
+        width: 60px;
+    }
+    
+    .calendar-day {
+        min-height: 45px;
+        padding: 0.4rem 0.2rem;
+    }
+    
+    .day-number {
+        font-size: 0.8rem;
+    }
+    
+    .day-progress {
+        font-size: 0.6rem;
+    }
+}
+
+/* Dark mode support (system preference) */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    
+    .app-container {
+        background-color: #1e1e1e;
+    }
+    
+    .date-display {
+        background-color: #1e1e1e;
+        color: #b0b0b0;
+        border-bottom-color: #333;
+    }
+    
+    .exercise-card {
+        background: #2d2d2d;
+        border-color: #444;
+    }
+    
+    .exercise-title {
+        color: #e0e0e0;
+    }
+    
+    .counter-input {
+        background: #333;
+        border-color: #555;
+        color: #e0e0e0;
+    }
+    
+    .counter-input:focus {
+        background: #444;
+    }
+    
+    .calendar-day {
+        background: #2d2d2d;
+        color: #e0e0e0;
+    }
+    
+    .calendar-day.other-month {
+        background: #1a1a1a;
+        color: #666;
+    }
+    
+    .modal-content {
+        background: #2d2d2d;
+    }
+    
+    .modal-header {
+        border-bottom-color: #444;
+    }
+    
+    .modal-title {
+        color: #e0e0e0;
+    }
+    
+    .detail-item {
+        background: #333;
+    }
+    
+    .detail-label {
+        color: #b0b0b0;
+    }
+}
+
+/* Animation for progress updates */
+@keyframes progressUpdate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.progress-update {
+    animation: progressUpdate 0.3s ease;
+}
+
+/* Touch feedback */
+.btn-counter:active,
+.btn-icon:active,
+.btn-nav:active,
+.calendar-day:active {
+    transform: scale(0.95);
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success state */
+.success-flash {
+    background: #4CAF50 !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+button:focus,
+input:focus {
+    outline: 2px solid #2196F3;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .btn-counter,
+    .btn-icon,
+    .btn-nav,
+    .btn-back,
+    .btn-setting {
+        border: 2px solid currentColor;
+    }
+    
+    .progress-fill {
+        background: #000;
+    }
+    
+    .calendar-day.complete {
+        background: #000;
+        color: #fff;
+    }
+}

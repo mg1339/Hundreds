@@ -1,0 +1,69 @@
+{
+  "name": "Hundreds - Workout Tracker",
+  "short_name": "Hundreds",
+  "description": "Track your daily hundreds workout: 100 pushups, 100 situps, 100 squats, 5 mile run",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196F3",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "en-US",
+  "categories": ["health", "fitness", "lifestyle"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSI0OCIgeT0iNDgiIHdpZHRoPSI5NiIgaGVpZ2h0PSI5NiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMC41NyAxNC44NkwyMiAxM2wtMS40My0xLjg2TDIwIDEwaDRWOGgtNGwtLjU3LTEuMTRMMjEgNWwtMS40My0xLjg2TDE4IDJoLTRWMGgtNHYyaC00bC0xLjU3IDEuMTRMMyA1bDEuNTcgMS4xNEw0IDhoLTRWMTBoNGwuNTcgMS4xNEwyIDEzbDEuNTcgMS44NkwzIDE2aDR2NGg0di00aDRsMS41Ny0xLjE0eiIvPgo8L3N2Zz4KPC9zdmc+",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iNjQiIGZpbGw9IiMyMTk2RjMiLz4KPHN2ZyB4PSIxMjgiIHk9IjEyOCIgd2lkdGg9IjI1NiIgaGVpZ2h0PSIyNTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMjAuNTcgMTQuODZMMjIgMTNsLTEuNDMtMS44NkwyMCAxMGg0VjhoLTRsLS41Ny0xLjE0TDIxIDVsLTEuNDMtMS44NkwxOCAyaC00VjBoLTR2MmgtNGwtMS41NyAxLjE0TDMgNWwxLjU3IDEuMTRMNCA4aC00djJoNGwuNTcgMS4xNEwyIDEzbDEuNTcgMS44NkwzIDE2aDR2NGg0di00aDRsMS41Ny0xLjE0eiIvPgo8L3N2Zz4KPC9zdmc+",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjU2OCIgdmlld0JveD0iMCAwIDMyMCA1NjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iNTY4IiBmaWxsPSIjZjVmNWY1Ii8+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iODAiIGZpbGw9InVybCgjZ3JhZGllbnQwXzBfMSkiLz4KPHN2ZyB4PSIyNCIgeT0iMjQiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Ik0yMC41NyAxNC44NkwyMiAxM2wtMS40My0xLjg2TDIwIDEwaDRWOGgtNGwtLjU3LTEuMTRMMjEgNWwtMS40My0xLjg2TDE4IDJoLTRWMGgtNHYyaC00bC0xLjU3IDEuMTRMMyA1bDEuNTcgMS4xNEw0IDhoLTRWMTBoNGwuNTcgMS4xNEwyIDEzbDEuNTcgMS44NkwzIDE2aDR2NGg0di00aDRsMS41Ny0xLjE0eiIvPgo8L3N2Zz4KPHRleHQgeD0iNzIiIHk9IjQ0IiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iNzAwIj5IdW5kcmVkczwvdGV4dD4KPHN2ZyB4PSIyNjQiIHk9IjI0IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTkgM2gtMVYxaC0ydjJIOFYxSDZ2Mkg1Yy0xLjExIDAtMS45OS45LTEuOTkgMkwzIDE5YzAgMS4xLjg5IDIgMiAyaDE0YzEuMSAwIDItLjkgMi0yVjVjMC0xLjEtLjktMi0yLTJ6bTAgMTZINVY4aDE0djExek03IDEwaDV2NUg3eiIvPgo8L3N2Zz4KPHN2ZyB4PSIyOTYiIHk9IjI0IiB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPgo8cGF0aCBkPSJNMTkuMTQsMTIuOTRjMC4wNC0wLjMsMC4wNi0wLjYxLDAuMDYtMC45NGMwLTAuMzItMC4wMi0wLjY0LTAuMDctMC45NGwyLjAzLTEuNThjMC4xOC0wLjE0LDAuMjMtMC40MSwwLjEyLTAuNjEgbC0xLjkyLTMuMzJjLTAuMTItMC4yMi0wLjM3LTAuMjktMC41OS0wLjIybC0yLjM5LDAuOTZjLTAuNS0wLjM4LTEuMDMtMC43LTEuNjItMC45NEwxNC40LDIuODFjLTAuMDQtMC4yNC0wLjI0LTAuNDEtMC40OC0wLjQxIGgtMy44NGMtMC4yNCwwLTAuNDMsMC4xNy0wLjQ3LDAuNDFMOS4yNSw1LjM1QzguNjYsNS41OSw4LjEyLDUuOTIsNy42Myw2LjI5TDUuMjQsNS4zM2MtMC4yMi0wLjA4LTAuNDcsMC0wLjU5LDAuMjJMMi43NCw4Ljg3IEMyLjYyLDkuMDgsMi42Niw5LjM0LDIuODYsOS40OGwyLjAzLDEuNThDNC44NCwxMS4zNiw0LjgyLDExLjY5LDQuODIsMTJzMC4wMiwwLjY0LDAuMDcsMC45NGwtMi4wMywxLjU4IGMtMC4xOCwwLjE0LTAuMjMsMC40MS0wLjEyLDAuNjFsMS45MiwzLjMyYzAuMTIsMC4yMiwwLjM3LDAuMjksMC41OSwwLjIybDIuMzktMC45NmMwLjUsMC4zOCwxLjAzLDAuNywxLjYyLDAuOTRsMC4zNiwyLjU0IGMwLjA1LDAuMjQsMC4yNCwwLjQxLDAuNDgsMC40MWgzLjg0YzAuMjQsMCwwLjQ0LTAuMTcsMC40Ny0wLjQxbDAuMzYtMi41NGMwLjU5LTAuMjQsMS4xMy0wLjU2LDEuNjItMC45NGwyLjM5LDAuOTYgYzAuMjIsMC4wOCwwLjQ3LDAsMC41OS0wLjIybDEuOTItMy4zMmMwLjEyLTAuMjIsMC4wNy0wLjQ3LTAuMTItMC42MUwxOS4xNCwxMi45NHogTTEyLDE1LjZjLTEuOTgsMC0zLjYtMS42Mi0zLjYtMy42IHMxLjYyLTMuNiwzLjYtMy42czMuNiwxLjYyLDMuNiwzLjZTMTMuOTgsMTUuNiwxMiwxNS42eiIvPgo8L3N2Zz4KPHN2ZyB4PSIyNCIgeT0iMTAwIiB3aWR0aD0iMjcyIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDI3MiA0MDAiIGZpbGw9Im5vbmUiPgo8cmVjdCB3aWR0aD0iMjcyIiBoZWlnaHQ9IjEwMCIgZmlsbD0id2hpdGUiIHJ4PSIxMiIvPgo8dGV4dCB4PSIyNCIgeT0iMzIiIGZpbGw9IiMzMzMiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjYwMCI+UHVzaHVwczwvdGV4dD4KPHRleHQgeD0iMjAwIiB5PSIzMiIgZmlsbD0iIzIxOTZGMyIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iNjAwIj4yNS8xMDA8L3RleHQ+CjxyZWN0IHg9IjI0IiB5PSI0NCIgd2lkdGg9IjIyNCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2UwZTBlMCIvPgo8cmVjdCB4PSIyNCIgeT0iNDQiIHdpZHRoPSI1NiIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iIzIxOTZGMyIvPgo8Y2lyY2xlIGN4PSI2NCIgY3k9Ijc2IiByPSIyNCIgZmlsbD0iI0ZGNTcyMiIvPgo8dGV4dCB4PSI1NiIgeT0iODIiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI2MDAiPi08L3RleHQ+CjxyZWN0IHg9IjEwNCIgeT0iNjQiIHdpZHRoPSI2NCIgaGVpZ2h0PSIyNCIgcng9IjgiIGZpbGw9IiNmOWY5ZjkiIHN0cm9rZT0iI2RkZCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjEyOCIgeT0iODAiIGZpbGw9IiMzMzMiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjYwMCI+MjU8L3RleHQ+CjxjaXJjbGUgY3g9IjIwOCIgY3k9Ijc2IiByPSIyNCIgZmlsbD0iIzIxOTZGMyIvPgo8dGV4dCB4PSIxOTgiIHk9IjgyIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNjAwIj4rPC90ZXh0Pgo8L3N2Zz4KPHN2ZyB4PSIyNCIgeT0iMjIwIiB3aWR0aD0iMjcyIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDI3MiAxMDAiIGZpbGw9Im5vbmUiPgo8cmVjdCB3aWR0aD0iMjcyIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNncmFkaWVudDFfMF8xKSIgcng9IjEyIi8+Cjx0ZXh0IHg9IjI0IiB5PSIzMiIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiI+VG90YWwgUHJvZ3Jlc3M6PC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjMyIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIj4yNSU8L3RleHQ+Cjx0ZXh0IHg9IjEzNiIgeT0iNjQiIGZpbGw9IndoaXRlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI2MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPktlZXAgZ29pbmchIPCfkqo8L3RleHQ+CjwvdGV4dD4KPC9zdmc+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF8wXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjMyMCIgeTI9IjgwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMyMTk2RjMiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMTk3NkQyIi8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQxXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iMjcyIiB5Mj0iMTAwIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiM0Q0FGNTAIIC8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzIxOTZGMyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjwvdGV4dD4KPC9zdmc+",
+      "sizes": "320x568",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's Workout",
+      "short_name": "Today",
+      "description": "View today's workout progress",
+      "url": "./index.html",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwLjU3IDE0Ljg2TDIyIDEzbC0xLjQzLTEuODZMMjAgMTBoNFY4aC00bC0uNTctMS4xNEwyMSA1bC0xLjQzLTEuODZMMTggMmgtNFYwaDR2Mmg0bDEuNTcgMS4xNEwzIDVsMS41NyAxLjE0TDQgOGg0djJoNGwuNTcgMS4xNEwyIDEzbDEuNTcgMS44NkwzIDE2aDR2NGg0di00aDRsMS41Ny0xLjE0eiIgZmlsbD0iIzIxOTZGMyIvPgo8L3N2Zz4=",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Calendar View",
+      "short_name": "Calendar",
+      "description": "View workout history calendar",
+      "url": "./index.html?view=calendar",
+      "icons": [
+        {
+          "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iOTYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTE5IDNoLTFWMWgtMnYySDhWMUg2djJINWMtMS4xMSAwLTEuOTkuOS0xLjk5IDJMMyAxOWMwIDEuMS44OSAyIDIgMmgxNGMxLjEgMCAyLS45IDItMlY1YzAtMS4xLS45LTItMi0yem0wIDE2SDVWOGgxNHYxMXpNNyAxMGg1djVIN3oiIGZpbGw9IiMyMTk2RjMiLz4KPC9zdmc+",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  }
+}
