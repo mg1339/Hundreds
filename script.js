@@ -176,9 +176,6 @@ class HundredsApp {
             this.resetToday();
         });
 
-        document.getElementById('resetAll').addEventListener('click', () => {
-            this.resetAllData();
-        });
 
         // Close modals when clicking overlay
         document.querySelectorAll('.modal-overlay').forEach(modal => {
@@ -262,10 +259,6 @@ class HundredsApp {
                 inputElement.value = count.toString();
             }
 
-            // Update progress bar
-            const progressElement = document.getElementById(`${exercise}Progress`);
-            progressElement.style.width = `${percentage}%`;
-
             // Add completion styling
             const card = countElement.closest('.exercise-card');
             if (percentage >= 100) {
@@ -278,21 +271,7 @@ class HundredsApp {
     }
 
     updateSummary() {
-        const totalProgress = this.calculateTotalProgress(this.currentData);
-        document.getElementById('totalProgress').textContent = `${totalProgress}%`;
-        
-        const statusElement = document.getElementById('completionStatus');
-        if (totalProgress === 100) {
-            statusElement.textContent = '🎉 Complete! Amazing work!';
-        } else if (totalProgress >= 75) {
-            statusElement.textContent = '🔥 Almost there! Keep pushing!';
-        } else if (totalProgress >= 50) {
-            statusElement.textContent = '💪 Great progress! Keep going!';
-        } else if (totalProgress >= 25) {
-            statusElement.textContent = '🚀 Good start! You got this!';
-        } else {
-            statusElement.textContent = 'Ready to crush today? 💪';
-        }
+        // Summary removed for simplicity
     }
 
     updateDateDisplay() {
@@ -505,18 +484,6 @@ class HundredsApp {
         }
     }
 
-    resetAllData() {
-        if (confirm('Are you sure you want to delete ALL data? This cannot be undone.')) {
-            if (confirm('This will permanently delete all your workout history. Are you absolutely sure?')) {
-                localStorage.removeItem('hundredsData');
-                this.workoutHistory = {};
-                this.currentData = { pushups: 0, situps: 0, squats: 0, running: 0.0 };
-                this.updateDisplay();
-                this.showNotification('All data reset', 'success');
-                this.hideModal('settingsModal');
-            }
-        }
-    }
 
     // Notifications
     showNotification(message, type = 'info') {

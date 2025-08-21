@@ -6,49 +6,56 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #1c1c1e 100%);
+    color: #ffffff;
+    line-height: 1.4;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 /* App Container */
 .app-container {
-    max-width: 480px;
+    max-width: 430px;
     margin: 0 auto;
-    background-color: #fff;
+    background: linear-gradient(135deg, #000000 0%, #1c1c1e 100%);
     min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 /* Header */
 .app-header {
-    background: linear-gradient(135deg, #2196F3, #1976D2);
+    background: rgba(28, 28, 30, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     color: white;
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .app-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 700;
     margin: 0;
+    letter-spacing: -0.02em;
 }
 
 .header-controls {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .btn-icon {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    border-radius: 50%;
+    border-radius: 12px;
     width: 44px;
     height: 44px;
     display: flex;
@@ -56,57 +63,71 @@ body {
     justify-content: center;
     color: white;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     -webkit-tap-highlight-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-icon:hover, .btn-icon:active {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
 }
 
 /* Date Display */
 .date-display {
-    background-color: #fff;
-    padding: 1rem;
+    background: transparent;
+    padding: 1rem 1.5rem 0.5rem;
     text-align: center;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #666;
-    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.01em;
 }
 
 /* Tracking Interface */
 .tracking-interface {
-    padding: 1rem;
+    padding: 1rem 1.5rem 2rem;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 
 .exercise-grid {
     display: grid;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-/* Exercise Cards */
+/* Exercise Cards - Apple Fitness Style */
 .exercise-card {
-    background: white;
-    border-radius: 12px;
+    background: rgba(28, 28, 30, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
     padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eee;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .exercise-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .exercise-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     margin: 0;
+    letter-spacing: -0.01em;
 }
 
 .exercise-progress {
@@ -115,48 +136,32 @@ body {
 }
 
 .current-count {
-    color: #2196F3;
-    font-size: 1.3rem;
+    color: #30d158; /* Apple Green */
+    font-size: 1.4rem;
+    font-weight: 700;
 }
 
 .target-count {
-    color: #666;
-}
-
-/* Progress Bar */
-.progress-bar {
-    width: 100%;
-    height: 8px;
-    background-color: #e0e0e0;
-    border-radius: 4px;
-    overflow: hidden;
-    margin-bottom: 1rem;
-}
-
-.progress-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #4CAF50, #2196F3);
-    border-radius: 4px;
-    transition: width 0.3s ease;
-    width: 0%;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
 }
 
 /* Exercise Controls */
 .exercise-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     justify-content: center;
 }
 
 .btn-counter {
-    background: #2196F3;
+    background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
     color: white;
     border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    font-size: 1.2rem;
+    border-radius: 16px;
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -164,38 +169,44 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
 }
 
 .btn-counter:hover, .btn-counter:active {
-    background: #1976D2;
     transform: scale(0.95);
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.4);
 }
 
 .btn-minus {
-    background: #FF5722;
+    background: linear-gradient(135deg, #ff3b30 0%, #d70015 100%);
+    box-shadow: 0 4px 16px rgba(255, 59, 48, 0.3);
 }
 
 .btn-minus:hover, .btn-minus:active {
-    background: #E64A19;
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.4);
 }
 
 .counter-input {
-    width: 80px;
-    padding: 0.75rem;
-    border: 2px solid #ddd;
-    border-radius: 8px;
+    width: 90px;
+    padding: 1rem;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 600;
-    background: #f9f9f9;
+    background: rgba(28, 28, 30, 0.8);
+    color: #ffffff;
     -webkit-appearance: none;
     -moz-appearance: textfield;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .counter-input:focus {
     outline: none;
-    border-color: #2196F3;
-    background: white;
+    border-color: #007aff;
+    background: rgba(28, 28, 30, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
 }
 
 .counter-input::-webkit-outer-spin-button,
@@ -204,120 +215,97 @@ body {
     margin: 0;
 }
 
-/* Daily Summary */
-.daily-summary {
-    background: linear-gradient(135deg, #4CAF50, #2196F3);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.summary-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-}
-
-.summary-label {
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-.summary-value {
-    font-size: 1.2rem;
-    font-weight: 700;
-}
-
-.completion-status {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 0.5rem;
-}
-
 /* Calendar View */
 .calendar-view {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
+    height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 
 .calendar-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     padding: 0 0.5rem;
 }
 
 .calendar-title {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     margin: 0;
+    letter-spacing: -0.01em;
 }
 
 .btn-nav {
-    background: #2196F3;
+    background: rgba(28, 28, 30, 0.8);
     color: white;
     border: none;
-    border-radius: 50%;
+    border-radius: 12px;
     width: 44px;
     height: 44px;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     -webkit-tap-highlight-color: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .btn-nav:hover, .btn-nav:active {
-    background: #1976D2;
+    background: rgba(28, 28, 30, 0.9);
+    transform: scale(0.95);
 }
 
 .calendar-grid {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 2px;
-    background-color: #ddd;
-    border-radius: 8px;
+    gap: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
     overflow: hidden;
     margin-bottom: 2rem;
 }
 
 .calendar-day {
-    background: white;
+    background: rgba(28, 28, 30, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     padding: 0.75rem 0.5rem;
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    min-height: 60px;
+    transition: all 0.2s ease;
+    min-height: 65px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
+    color: #ffffff;
 }
 
 .calendar-day:hover {
-    background: #f5f5f5;
+    background: rgba(28, 28, 30, 0.8);
 }
 
 .calendar-day.other-month {
-    color: #ccc;
-    background: #f9f9f9;
+    color: rgba(255, 255, 255, 0.3);
+    background: rgba(28, 28, 30, 0.3);
 }
 
 .calendar-day.today {
-    background: #2196F3;
+    background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
     color: white;
 }
 
 .calendar-day.complete {
-    background: #4CAF50;
+    background: linear-gradient(135deg, #30d158 0%, #248a3d 100%);
     color: white;
 }
 
 .calendar-day.partial {
-    background: #FF9800;
+    background: linear-gradient(135deg, #ff9f0a 0%, #ff6b00 100%);
     color: white;
 }
 
@@ -336,19 +324,21 @@ body {
 .btn-back {
     width: 100%;
     padding: 1rem;
-    background: #2196F3;
+    background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 16px;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
 }
 
 .btn-back:hover, .btn-back:active {
-    background: #1976D2;
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.4);
 }
 
 /* Modal Styles */
@@ -358,7 +348,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -367,13 +359,16 @@ body {
 }
 
 .modal-content {
-    background: white;
-    border-radius: 12px;
+    background: rgba(28, 28, 30, 0.95);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 20px;
     width: 100%;
     max-width: 400px;
     max-height: 90vh;
     overflow-y: auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-header {
@@ -381,34 +376,36 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .modal-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
     margin: 0;
-    color: #333;
+    color: #ffffff;
+    letter-spacing: -0.01em;
 }
 
 .btn-close {
-    background: none;
+    background: rgba(255, 255, 255, 0.1);
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     cursor: pointer;
-    color: #666;
+    color: #ffffff;
     width: 32px;
     height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    transition: all 0.2s ease;
     -webkit-tap-highlight-color: transparent;
 }
 
 .btn-close:hover, .btn-close:active {
-    background: #f5f5f5;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(0.95);
 }
 
 .modal-body {
@@ -425,37 +422,41 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
-    background: #f9f9f9;
-    border-radius: 8px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
 }
 
 .detail-label {
-    font-weight: 600;
-    color: #666;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .detail-value {
     font-weight: 600;
-    color: #2196F3;
+    color: #30d158;
+    font-size: 1.1rem;
 }
 
 .modal-progress {
     text-align: center;
-    padding: 1rem;
-    background: linear-gradient(135deg, #4CAF50, #2196F3);
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #30d158 0%, #248a3d 100%);
     color: white;
-    border-radius: 8px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(48, 209, 88, 0.3);
 }
 
 .modal-progress-label {
     display: block;
     margin-bottom: 0.5rem;
     opacity: 0.9;
+    font-weight: 500;
 }
 
 .modal-progress-value {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 700;
 }
 
@@ -466,174 +467,83 @@ body {
 
 .settings-section h4 {
     margin-bottom: 1rem;
-    color: #333;
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.1rem;
     font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
 .btn-setting {
     width: 100%;
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    background: #2196F3;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, #007aff 0%, #0056cc 100%);
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     font-size: 1rem;
+    font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.2s ease;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 2px 8px rgba(0, 122, 255, 0.2);
 }
 
 .btn-setting:hover, .btn-setting:active {
-    background: #1976D2;
+    transform: scale(0.98);
+    box-shadow: 0 1px 4px rgba(0, 122, 255, 0.3);
 }
 
 .btn-setting.btn-danger {
-    background: #F44336;
+    background: linear-gradient(135deg, #ff3b30 0%, #d70015 100%);
+    box-shadow: 0 2px 8px rgba(255, 59, 48, 0.2);
 }
 
 .btn-setting.btn-danger:hover, .btn-setting.btn-danger:active {
-    background: #D32F2F;
+    box-shadow: 0 1px 4px rgba(255, 59, 48, 0.3);
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-    .app-container {
-        box-shadow: none;
-    }
-    
-    .exercise-controls {
-        gap: 0.75rem;
-    }
-    
-    .btn-counter {
-        width: 44px;
-        height: 44px;
-        font-size: 1.1rem;
-    }
-    
-    .counter-input {
-        width: 70px;
-        padding: 0.5rem;
-    }
-    
-    .calendar-day {
-        min-height: 50px;
-        padding: 0.5rem 0.25rem;
-    }
-    
-    .day-progress {
-        font-size: 0.65rem;
-    }
+/* Import/Export Icons */
+.icon-buttons {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
 }
 
-@media (max-width: 360px) {
-    .app-header {
-        padding: 0.75rem;
-    }
-    
-    .app-title {
-        font-size: 1.3rem;
-    }
-    
-    .exercise-card {
-        padding: 1rem;
-    }
-    
-    .exercise-controls {
-        gap: 0.5rem;
-    }
-    
-    .counter-input {
-        width: 60px;
-    }
-    
-    .calendar-day {
-        min-height: 45px;
-        padding: 0.4rem 0.2rem;
-    }
-    
-    .day-number {
-        font-size: 0.8rem;
-    }
-    
-    .day-progress {
-        font-size: 0.6rem;
-    }
+.btn-icon-small {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    border-radius: 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 0 !important;
+    font-size: 1.3rem !important;
+    position: relative;
 }
 
-/* Dark mode support (system preference) */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-    
-    .app-container {
-        background-color: #1e1e1e;
-    }
-    
-    .date-display {
-        background-color: #1e1e1e;
-        color: #b0b0b0;
-        border-bottom-color: #333;
-    }
-    
-    .exercise-card {
-        background: #2d2d2d;
-        border-color: #444;
-    }
-    
-    .exercise-title {
-        color: #e0e0e0;
-    }
-    
-    .counter-input {
-        background: #333;
-        border-color: #555;
-        color: #e0e0e0;
-    }
-    
-    .counter-input:focus {
-        background: #444;
-    }
-    
-    .calendar-day {
-        background: #2d2d2d;
-        color: #e0e0e0;
-    }
-    
-    .calendar-day.other-month {
-        background: #1a1a1a;
-        color: #666;
-    }
-    
-    .modal-content {
-        background: #2d2d2d;
-    }
-    
-    .modal-header {
-        border-bottom-color: #444;
-    }
-    
-    .modal-title {
-        color: #e0e0e0;
-    }
-    
-    .detail-item {
-        background: #333;
-    }
-    
-    .detail-label {
-        color: #b0b0b0;
-    }
+.btn-setting#exportData::before {
+    content: "↗";
+    font-weight: 700;
+}
+
+.btn-setting#importData::before {
+    content: "↙";
+    font-weight: 700;
+}
+
+/* Success state */
+.success-flash {
+    background: linear-gradient(135deg, #30d158 0%, #248a3d 100%) !important;
+    transition: background 0.3s ease;
+    box-shadow: 0 8px 32px rgba(48, 209, 88, 0.4) !important;
 }
 
 /* Animation for progress updates */
 @keyframes progressUpdate {
     0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.02); }
     100% { transform: scale(1); }
 }
 
@@ -645,20 +555,81 @@ body {
 .btn-counter:active,
 .btn-icon:active,
 .btn-nav:active,
-.calendar-day:active {
+.calendar-day:active,
+.btn-back:active,
+.btn-setting:active {
     transform: scale(0.95);
 }
 
-/* Loading state */
-.loading {
-    opacity: 0.6;
-    pointer-events: none;
+/* Responsive Design for iPhone 14 Pro Max */
+@media (max-width: 430px) {
+    .app-container {
+        max-width: 100%;
+    }
+    
+    .tracking-interface {
+        height: calc(100vh - 120px);
+        padding: 1rem;
+    }
+    
+    .exercise-controls {
+        gap: 1rem;
+    }
+    
+    .btn-counter {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
+    }
+    
+    .counter-input {
+        width: 80px;
+        padding: 0.75rem;
+    }
+    
+    .calendar-day {
+        min-height: 60px;
+        padding: 0.5rem 0.25rem;
+    }
+    
+    .day-progress {
+        font-size: 0.65rem;
+    }
 }
 
-/* Success state */
-.success-flash {
-    background: #4CAF50 !important;
-    transition: background-color 0.3s ease;
+@media (max-width: 375px) {
+    .app-header {
+        padding: 1rem;
+    }
+    
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .exercise-card {
+        padding: 1.25rem;
+    }
+    
+    .exercise-controls {
+        gap: 0.75rem;
+    }
+    
+    .counter-input {
+        width: 70px;
+    }
+    
+    .calendar-day {
+        min-height: 55px;
+        padding: 0.4rem 0.2rem;
+    }
+    
+    .day-number {
+        font-size: 0.8rem;
+    }
+    
+    .day-progress {
+        font-size: 0.6rem;
+    }
 }
 
 /* Accessibility improvements */
@@ -673,7 +644,7 @@ body {
 /* Focus styles for keyboard navigation */
 button:focus,
 input:focus {
-    outline: 2px solid #2196F3;
+    outline: 2px solid #007aff;
     outline-offset: 2px;
 }
 
@@ -687,12 +658,8 @@ input:focus {
         border: 2px solid currentColor;
     }
     
-    .progress-fill {
-        background: #000;
-    }
-    
     .calendar-day.complete {
-        background: #000;
-        color: #fff;
+        background: #30d158;
+        color: #000;
     }
 }

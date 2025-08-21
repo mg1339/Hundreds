@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="Track your daily hundreds workout: 100 pushups, 100 situps, 100 squats, 5 mile run">
     <title>Hundreds - Workout Tracker</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#2196F3">
+    <meta name="theme-color" content="#000000">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Hundreds">
@@ -48,9 +48,6 @@
                             <span class="target-count">/100</span>
                         </div>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="pushupsProgress"></div>
-                    </div>
                     <div class="exercise-controls">
                         <button class="btn-counter btn-minus" data-exercise="pushups" data-action="subtract">-</button>
                         <input type="number" class="counter-input" id="pushupsInput" min="0" max="999" value="0">
@@ -66,9 +63,6 @@
                             <span class="current-count" id="situpsCount">0</span>
                             <span class="target-count">/100</span>
                         </div>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="situpsProgress"></div>
                     </div>
                     <div class="exercise-controls">
                         <button class="btn-counter btn-minus" data-exercise="situps" data-action="subtract">-</button>
@@ -86,9 +80,6 @@
                             <span class="target-count">/100</span>
                         </div>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="squatsProgress"></div>
-                    </div>
                     <div class="exercise-controls">
                         <button class="btn-counter btn-minus" data-exercise="squats" data-action="subtract">-</button>
                         <input type="number" class="counter-input" id="squatsInput" min="0" max="999" value="0">
@@ -105,9 +96,6 @@
                             <span class="target-count">/5.0 mi</span>
                         </div>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="runningProgress"></div>
-                    </div>
                     <div class="exercise-controls">
                         <button class="btn-counter btn-minus" data-exercise="running" data-action="subtract">-0.1</button>
                         <input type="number" class="counter-input" id="runningInput" min="0" max="99.9" step="0.1" value="0.0">
@@ -116,16 +104,6 @@
                 </div>
             </div>
 
-            <!-- Daily Summary -->
-            <div class="daily-summary">
-                <div class="summary-item">
-                    <span class="summary-label">Total Progress:</span>
-                    <span class="summary-value" id="totalProgress">0%</span>
-                </div>
-                <div class="completion-status" id="completionStatus">
-                    Keep going! 💪
-                </div>
-            </div>
         </main>
 
         <!-- Calendar View (Hidden by default) -->
@@ -185,14 +163,15 @@
                 <div class="modal-body">
                     <div class="settings-section">
                         <h4>Data Management</h4>
-                        <button class="btn-setting" id="exportData">Export Data</button>
-                        <button class="btn-setting" id="importData">Import Data</button>
+                        <div class="icon-buttons">
+                            <button class="btn-setting btn-icon-small" id="exportData" title="Export Data"></button>
+                            <button class="btn-setting btn-icon-small" id="importData" title="Import Data"></button>
+                        </div>
                         <input type="file" id="importFile" accept=".json" style="display: none;">
                     </div>
                     <div class="settings-section">
                         <h4>Reset Options</h4>
                         <button class="btn-setting btn-danger" id="resetToday">Reset Today</button>
-                        <button class="btn-setting btn-danger" id="resetAll">Reset All Data</button>
                     </div>
                 </div>
             </div>
