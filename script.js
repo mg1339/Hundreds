@@ -2,11 +2,12 @@
 class HundredsApp {
     constructor() {
         this.exercises = ['pushups', 'situps', 'squats', 'running'];
-        this.targets = { pushups: 100, situps: 100, squats: 100, running: 5.0 };
+        this.targets = { pushups: 100, situps: 100, squats: 100, running: 10.0 };
         this.currentData = { pushups: 0, situps: 0, squats: 0, running: 0.0 };
         this.currentDate = this.getTodayString();
         this.currentView = 'tracking';
         this.currentCalendarDate = new Date();
+        this.currentTheme = localStorage.getItem('hundredsTheme') || 'dark';
         
         this.init();
     }
@@ -17,6 +18,7 @@ class HundredsApp {
         this.updateDisplay();
         this.updateDateDisplay();
         this.checkForNewDay();
+        this.applyTheme();
     }
 
     // Date and Time Utilities
@@ -141,6 +143,11 @@ class HundredsApp {
             this.showSettingsModal();
         });
 
+        // Theme dropdown
+        document.getElementById('themeSelect').addEventListener('change', (e) => {
+            this.changeTheme(e.target.value);
+        });
+
         // Calendar navigation
         document.getElementById('prevMonth').addEventListener('click', () => {
             this.navigateCalendar(-1);
@@ -229,11 +236,7 @@ class HundredsApp {
     }
 
     addProgressFeedback(exercise) {
-        const card = document.querySelector(`#${exercise}Count`).closest('.exercise-card');
-        card.classList.add('progress-update');
-        setTimeout(() => {
-            card.classList.remove('progress-update');
-        }, 300);
+        // Removed card bounce animation for cleaner interaction
     }
 
     // Display Updates
@@ -409,6 +412,8 @@ class HundredsApp {
     }
 
     showSettingsModal() {
+        // Update dropdown to current theme
+        document.getElementById('themeSelect').value = this.currentTheme;
         this.showModal('settingsModal');
     }
 
@@ -529,6 +534,19 @@ class HundredsApp {
                 }
             }, 300);
         }, 3000);
+    }
+
+    // Theme Management
+    changeTheme(themeName) {
+        this.currentTheme = themeName;
+        localStorage.setItem('hundredsTheme', this.currentTheme);
+        this.applyTheme();
+    }
+
+    applyTheme() {
+        const body = document.body;
+        body.className = ''; // Clear existing theme classes
+        body.classList.add(`theme-${this.currentTheme}`);
     }
 }
 

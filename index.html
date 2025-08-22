@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="description" content="Track your daily hundreds workout: 100 pushups, 100 situps, 100 squats, 5 mile run">
     <title>Hundreds - Workout Tracker</title>
     <link rel="stylesheet" href="styles.css">
@@ -93,7 +93,7 @@
                         <h2 class="exercise-title">Running</h2>
                         <div class="exercise-progress">
                             <span class="current-count" id="runningCount">0.0</span>
-                            <span class="target-count">/5.0 mi</span>
+                            <span class="target-count">/10.0 mi</span>
                         </div>
                     </div>
                     <div class="exercise-controls">
@@ -142,7 +142,7 @@
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Running:</span>
-                            <span class="detail-value" id="modalRunning">0.0/5.0 mi</span>
+                            <span class="detail-value" id="modalRunning">0.0/10.0 mi</span>
                         </div>
                     </div>
                     <div class="modal-progress">
@@ -161,6 +161,15 @@
                     <button class="btn-close" id="closeSettingsModal">×</button>
                 </div>
                 <div class="modal-body">
+                    <div class="settings-section">
+                        <h4>Theme</h4>
+                        <select class="theme-dropdown" id="themeSelect">
+                            <option value="dark">Dark</option>
+                            <option value="grey">Grey</option>
+                            <option value="ocean">Ocean</option>
+                            <option value="light">Light</option>
+                        </select>
+                    </div>
                     <div class="settings-section">
                         <h4>Data Management</h4>
                         <div class="icon-buttons">
