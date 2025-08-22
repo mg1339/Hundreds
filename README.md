@@ -4,7 +4,7 @@ A mobile-optimized Progressive Web App for tracking your daily "Hundreds" workou
 - 100 pushups
 - 100 situps  
 - 100 squats
-- 5 mile run
+- 10 mile run
 
 ## 🚀 Features
 
@@ -234,5 +234,6 @@ Feel free to submit issues, feature requests, or pull requests to improve the ap
 ---
 
 **Ready to crush your hundreds? 💪**
+
 
 Start tracking your daily workout progress and build consistency with this powerful, offline-capable PWA!
