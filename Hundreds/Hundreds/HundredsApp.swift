@@ -2,10 +2,11 @@
 //  HundredsApp.swift
 //  Hundreds
 //
-//  Created by Mike Grinker on 8/27/25.
+//  Created on 2025-01-26.
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HundredsApp: App {
@@ -13,5 +14,6 @@ struct HundredsApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: WorkoutDay.self)
     }
 }

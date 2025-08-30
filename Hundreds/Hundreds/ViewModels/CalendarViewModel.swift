@@ -7,8 +7,10 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 import Combine
 
+@MainActor
 class CalendarViewModel: ObservableObject {
     @Published var currentMonth = Date()
     @Published var workoutHistory: [String: WorkoutDay] = [:]
@@ -16,22 +18,22 @@ class CalendarViewModel: ObservableObject {
     @Published var selectedDay: WorkoutDay?
     @Published var showingDayDetail = false
     
-    private var dataController: DataController?
+    private var modelContext: ModelContext?
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         loadCurrentMonthData()
     }
     
-    func setDataController(_ dataController: DataController) {
-        self.dataController = dataController
+    func setModelContext(_ context: ModelContext) {
+        self.modelContext = context
         loadCurrentMonthData()
     }
     
     // MARK: - Data Loading
     
     func loadCurrentMonthData() {
-        guard let dataController = dataController else { return }
+        guard let context = modelContext else { return }
         
         isLoading = true
         
@@ -39,14 +41,21 @@ class CalendarViewModel: ObservableObject {
         let startOfMonth = calendar.dateInterval(of: .month, for: currentMonth)?.start ?? currentMonth
         let endOfMonth = calendar.dateInterval(of: .month, for: currentMonth)?.end ?? currentMonth
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            let history = dataController.loadWorkoutHistory(from: startOfMonth, to: endOfMonth)
-            
-            DispatchQueue.main.async {
-                self.workoutHistory = Dictionary(uniqueKeysWithValues: history.map { ($0.dateString, $0) })
-                self.isLoading = false
+        let descriptor = FetchDescriptor<WorkoutDay>(
+            predicate: #Predicate { workout in
+                workout.date >= startOfMonth && workout.date <= endOfMonth
             }
+        )
+        
+        do {
+            let history = try context.fetch(descriptor)
+            workoutHistory = Dictionary(uniqueKeysWithValues: history.map { ($0.dateString, $0) })
+        } catch {
+            print("Failed to load workout history: \(error)")
+            workoutHistory = [:]
         }
+        
+        isLoading = false
     }
     
     // MARK: - Calendar Navigation
@@ -68,8 +77,14 @@ class CalendarViewModel: ObservableObject {
     }
     
     func navigateToToday() {
-        currentMonth = Date()
+        let today = Date()
+        currentMonth = today
         loadCurrentMonthData()
+        
+        // Force a refresh to ensure UI updates
+        DispatchQueue.main.async {
+            self.objectWillChange.send()
+        }
     }
     
     // MARK: - Calendar Data

@@ -22,7 +22,7 @@ struct ExerciseType: Identifiable, Hashable {
         displayName: "Pushups",
         target: 100,
         increment: 1,
-        maxValue: 999,
+        maxValue: 100,
         decimalPlaces: 0,
         unit: ""
     )
@@ -32,7 +32,7 @@ struct ExerciseType: Identifiable, Hashable {
         displayName: "Situps",
         target: 100,
         increment: 1,
-        maxValue: 999,
+        maxValue: 100,
         decimalPlaces: 0,
         unit: ""
     )
@@ -42,7 +42,7 @@ struct ExerciseType: Identifiable, Hashable {
         displayName: "Squats",
         target: 100,
         increment: 1,
-        maxValue: 999,
+        maxValue: 100,
         decimalPlaces: 0,
         unit: ""
     )
@@ -52,7 +52,7 @@ struct ExerciseType: Identifiable, Hashable {
         displayName: "Running",
         target: 10.0,
         increment: 0.1,
-        maxValue: 99.9,
+        maxValue: 10.0,
         decimalPlaces: 1,
         unit: "mi"
     )

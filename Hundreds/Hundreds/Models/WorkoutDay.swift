@@ -6,16 +6,19 @@
 //
 
 import Foundation
+import SwiftData
 
-struct WorkoutDay: Identifiable, Codable {
-    let id = UUID()
-    let date: Date
+@Model
+class WorkoutDay: Identifiable {
+    var id: UUID
+    var date: Date
     var pushups: Double
     var situps: Double
     var squats: Double
     var running: Double
     
     init(date: Date = Date(), pushups: Double = 0, situps: Double = 0, squats: Double = 0, running: Double = 0) {
+        self.id = UUID()
         self.date = Calendar.current.startOfDay(for: date)
         self.pushups = pushups
         self.situps = situps
@@ -35,7 +38,7 @@ struct WorkoutDay: Identifiable, Codable {
     }
     
     // Set exercise value by type
-    mutating func setValue(_ value: Double, for exerciseType: ExerciseType) {
+    func setValue(_ value: Double, for exerciseType: ExerciseType) {
         let clampedValue = max(0, min(exerciseType.maxValue, value))
         
         switch exerciseType.name {

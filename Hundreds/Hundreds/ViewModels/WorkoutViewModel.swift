@@ -7,14 +7,16 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 import Combine
 import UIKit
 
+@MainActor
 class WorkoutViewModel: ObservableObject {
     @Published var currentWorkout: WorkoutDay
     @Published var isLoading = false
     
-    private var dataController: DataController?
+    private var modelContext: ModelContext?
     private var cancellables = Set<AnyCancellable>()
     private var dayCheckTimer: Timer?
     
@@ -23,46 +25,64 @@ class WorkoutViewModel: ObservableObject {
         setupDayCheckTimer()
     }
     
-    func setDataController(_ dataController: DataController) {
-        self.dataController = dataController
+    func setModelContext(_ context: ModelContext) {
+        self.modelContext = context
         loadTodaysWorkout()
     }
     
     // MARK: - Data Operations
     
     func loadTodaysWorkout() {
-        guard let dataController = dataController else { return }
+        guard let context = modelContext else { return }
         
         isLoading = true
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let entity = dataController.loadWorkoutDay(for: Date()) {
-                let workout = WorkoutDay(
-                    date: entity.date ?? Date(),
-                    pushups: entity.pushups,
-                    situps: entity.situps,
-                    squats: entity.squats,
-                    running: entity.running
-                )
-                
-                DispatchQueue.main.async {
-                    self.currentWorkout = workout
-                    self.isLoading = false
-                }
+        let today = Calendar.current.startOfDay(for: Date())
+        let descriptor = FetchDescriptor<WorkoutDay>(
+            predicate: #Predicate { $0.date == today }
+        )
+        
+        do {
+            let workouts = try context.fetch(descriptor)
+            if let workout = workouts.first {
+                currentWorkout = workout
             } else {
-                DispatchQueue.main.async {
-                    self.currentWorkout = WorkoutDay.today
-                    self.isLoading = false
-                }
+                currentWorkout = WorkoutDay.today
             }
+        } catch {
+            print("Failed to load today's workout: \(error)")
+            currentWorkout = WorkoutDay.today
         }
+        
+        isLoading = false
     }
     
     private func saveCurrentWorkout() {
-        guard let dataController = dataController else { return }
+        guard let context = modelContext else { return }
         
-        DispatchQueue.global(qos: .utility).async {
-            dataController.saveWorkoutDay(self.currentWorkout)
+        do {
+            // Check if this workout already exists in the context
+            let today = Calendar.current.startOfDay(for: Date())
+            let descriptor = FetchDescriptor<WorkoutDay>(
+                predicate: #Predicate { $0.date == today }
+            )
+            
+            let existingWorkouts = try context.fetch(descriptor)
+            
+            if let existingWorkout = existingWorkouts.first {
+                // Update existing workout
+                existingWorkout.pushups = currentWorkout.pushups
+                existingWorkout.situps = currentWorkout.situps
+                existingWorkout.squats = currentWorkout.squats
+                existingWorkout.running = currentWorkout.running
+            } else {
+                // Insert new workout
+                context.insert(currentWorkout)
+            }
+            
+            try context.save()
+        } catch {
+            print("Failed to save workout: \(error)")
         }
     }
     
@@ -127,7 +147,9 @@ class WorkoutViewModel: ObservableObject {
     private func setupDayCheckTimer() {
         // Check for day change every minute
         dayCheckTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-            self.checkForNewDay()
+            Task { @MainActor in
+                self.checkForNewDay()
+            }
         }
     }
     
